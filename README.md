@@ -36,13 +36,9 @@ The variables included in this dataset are:
 * **interval**: Identifier for the 5-minute interval in which
     measurement was taken
 
-
-
-
 The dataset is stored in a comma-separated-value (CSV) file and there
 are a total of 17,568 observations in this
 dataset.
-
 
 ## Assignment
 
@@ -72,8 +68,6 @@ repository state.
 NOTE: The GitHub repository also contains the dataset for the
 assignment so you do not have to download the data separately.
 
-
-
 ### Loading and preprocessing the data
 
 Show any code that is needed to
@@ -81,7 +75,6 @@ Show any code that is needed to
 1. Load the data (i.e. `read.csv()`)
 
 2. Process/transform the data (if necessary) into a format suitable for your analysis
-
 
 ### What is mean total number of steps taken per day?
 
@@ -92,13 +85,11 @@ the dataset.
 
 2. Calculate and report the **mean** and **median** total number of steps taken per day
 
-
 ### What is the average daily activity pattern?
 
 1. Make a time series plot (i.e. `type = "l"`) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
-
 
 ### Imputing missing values
 
@@ -114,7 +105,6 @@ bias into some calculations or summaries of the data.
 
 4. Make a histogram of the total number of steps taken each day and Calculate and report the **mean** and **median** total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
-
 ### Are there differences in activity patterns between weekdays and weekends?
 
 For this part the `weekdays()` function may be of some help here. Use
@@ -122,16 +112,14 @@ the dataset with the filled-in missing values for this part.
 
 1. Create a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
 
-1. Make a panel plot containing a time series plot (i.e. `type = "l"`) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). The plot should look something like the following, which was created using **simulated data**:
+2. Make a panel plot containing a time series plot (i.e. `type = "l"`) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). The plot should look something like the following, which was created using **simulated data**:
 
 ![Sample panel plot](instructions_fig/sample_panelplot.png) 
-
 
 **Your plot will look different from the one above** because you will
 be using the activity monitor data. Note that the above plot was made
 using the lattice system but you can make the same version of the plot
 using any plotting system you choose.
-
 
 ## Submitting the Assignment
 
