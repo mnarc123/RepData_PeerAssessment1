@@ -2329,12 +2329,7 @@ body {
   <style>.markdown-body{}pre.front-matter{display:none!important;}</style>
 </head>
 <body>
-  <article class="markdown-body"><pre class="front-matter">title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
-</pre>
-<h1 class="atx" id="loading-and-preprocessing-the-data">Loading and preprocessing the data</h1>
+  <article class="markdown-body"><h1 class="atx" id="loading-and-preprocessing-the-data">Loading and preprocessing the data</h1>
 <h3 class="atx" id="load-necessary-libraries">Load necessary libraries</h3>
 <pre><code class="fenced-code-block language-r">library<span class="token punctuation">(</span>ggplot2<span class="token punctuation">)</span>
 library<span class="token punctuation">(</span>dplyr<span class="token punctuation">)</span></code></pre>
@@ -2354,7 +2349,7 @@ library<span class="token punctuation">(</span>dplyr<span class="token punctuati
 <pre><code class="fenced-code-block language-r">mean_steps <span class="token operator">&lt;-</span> mean<span class="token punctuation">(</span>daily_steps<span class="token operator">$</span>total_steps<span class="token punctuation">)</span>
 median_steps <span class="token operator">&lt;-</span> median<span class="token punctuation">(</span>daily_steps<span class="token operator">$</span>total_steps<span class="token punctuation">)</span></code></pre>
 <div>
-<img width="865" src="1.png">
+<img width="865" src="figure/1.png">
 </div>
 
 <h1 class="atx" id=""></h1>
@@ -2370,10 +2365,8 @@ median_steps <span class="token operator">&lt;-</span> median<span class="token 
 <h3 class="atx" id="find-the-interval-with-the-maximum-number-of-steps">Find the interval with the maximum number of steps</h3>
 <p>max_interval &lt;- average_steps[which.max(average_steps<span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:1em;vertical-align:-0.25em;" class="strut"></span><span class="mord mathnormal">m</span><span class="mord mathnormal">e</span><span class="mord mathnormal">a</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span style="height:0.1514em;" class="vlist"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span style="height:2.7em;" class="pstrut"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span style="height:0.15em;" class="vlist"><span></span></span></span></span></span></span><span class="mord mathnormal">t</span><span class="mord mathnormal">e</span><span class="mord mathnormal">p</span><span class="mord mathnormal">s</span><span class="mclose">)</span><span class="mpunct">,</span><span style="margin-right:0.1667em;" class="mspace"></span><span class="mclose">]</span></span></span></span>interval</p>
 <div>
-<img width="865" src="2.png">
+<img width="865" src="figure/2.png">
 </div>
-
-
 
 <h1 class="atx" id="imputing-missing-values">Imputing missing values</h1>
 <h3 class="atx" id="total-number-of-missing-values">Total number of missing values</h3>
@@ -2391,7 +2384,7 @@ median_steps <span class="token operator">&lt;-</span> median<span class="token 
 <pre><code class="fenced-code-block language-r">mean_imputed <span class="token operator">&lt;-</span> mean<span class="token punctuation">(</span>imputed_daily_steps<span class="token operator">$</span>total_steps<span class="token punctuation">)</span>
 median_imputed <span class="token operator">&lt;-</span> median<span class="token punctuation">(</span>imputed_daily_steps<span class="token operator">$</span>total_steps<span class="token punctuation">)</span></code></pre>
 <div>
-<img width="865" src="3.png">
+<img width="865" src="figure/3.png">
 </div>
 
 <h1 class="atx" id="-1"></h1>
@@ -2410,8 +2403,10 @@ imputed_steps<span class="token operator">$</span>day_type <span class="token op
   ylab<span class="token punctuation">(</span><span class="token string">"Average Number of Steps"</span><span class="token punctuation">)</span> <span class="token operator">+</span>
   labs<span class="token punctuation">(</span>title <span class="token operator">=</span> <span class="token string">"Activity Patterns: Weekdays vs. Weekends"</span><span class="token punctuation">)</span></code></pre>
 <div>
-<img width="865" src="4.png">
+<img width="865" src="figure/4.png">
 </div>
+
+
 </article>
 </body>
 </html>

@@ -13,8 +13,6 @@ library(dplyr)
 data <- read.csv("activity.csv")
 ```
 
-
-
 # What is mean total number of steps taken per day?
 
 ### Calculate total number of steps taken per day
@@ -42,7 +40,7 @@ median_steps <- median(daily_steps$total_steps)
 ```
 
 <div>
-<img src="1.png" width="865"/>
+<img src="figure/1.png" width="865"/>
 </div>
 
 # 
@@ -69,10 +67,8 @@ ggplot(average_steps, aes(x = interval, y = mean_steps)) +
 max_interval <- average_steps[which.max(average_steps$mean_steps), ]$interval
 
 <div>
-<img src="2.png" width="865"/>
+<img src="figure/2.png" width="865"/>
 </div>
-
-
 
 # Imputing missing values
 
@@ -109,7 +105,7 @@ median_imputed <- median(imputed_daily_steps$total_steps)
 ```
 
 <div>
-<img src="3.png" width="865"/>
+<img src="figure/3.png" width="865"/>
 </div>
 
 # 
@@ -144,5 +140,5 @@ facet_wrap(~day_type, ncol = 1, nrow = 2) +
 ```
 
 <div>
-<img src="4.png" width="865"/>
+<img src="figure/4.png" width="865"/>
 </div>
