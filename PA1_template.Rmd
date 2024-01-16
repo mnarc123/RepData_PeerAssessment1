@@ -6,34 +6,33 @@ output:
 ---
 
 
-## Loading and preprocessing the data
-# Load necessary libraries
+# Loading and preprocessing the data
+### Load necessary libraries
 library(ggplot2)
 library(dplyr)
-
-# Load the data
+### Load the data
 data <- read.csv("activity.csv")
 
 
-## What is mean total number of steps taken per day?
-# Calculate total number of steps taken per day
+# What is mean total number of steps taken per day?
+### Calculate total number of steps taken per day
 daily_steps <- data %>%
   group_by(date) %>%
   summarize(total_steps = sum(steps, na.rm = TRUE))
 
-# Histogram of the total number of steps taken each day
+### Histogram of the total number of steps taken each day
 ggplot(daily_steps, aes(x = total_steps)) +
   geom_histogram(binwidth = 1000) +
   xlab("Total Steps Per Day") +
   ylab("Frequency")
 
-# Calculate and report the mean and median
+### Calculate and report the mean and median
 mean_steps <- mean(daily_steps$total_steps)
 median_steps <- median(daily_steps$total_steps)
 
 
-## What is the average daily activity pattern?
-# Time series plot of the average number of steps taken
+# What is the average daily activity pattern?
+### Time series plot of the average number of steps taken
 average_steps <- data %>%
   group_by(interval) %>%
   summarize(mean_steps = mean(steps, na.rm = TRUE))
@@ -43,18 +42,18 @@ ggplot(average_steps, aes(x = interval, y = mean_steps)) +
   xlab("5-minute Interval") +
   ylab("Average Number of Steps")
 
-# Find the interval with the maximum number of steps
+### Find the interval with the maximum number of steps
 max_interval <- average_steps[which.max(average_steps$mean_steps), ]$interval
 
 
-## Imputing missing values
-# Total number of missing values
+# Imputing missing values
+### Total number of missing values
 missing_values <- sum(is.na(data$steps))
 
-# Strategy for filling in missing values (using mean for that 5-minute interval)
+### Strategy for filling in missing values (using mean for that 5-minute interval)
 imputed_steps <- transform(data, steps = ifelse(is.na(data$steps), average_steps$mean_steps[match(data$interval, average_steps$interval)], data$steps))
 
-# Repeat the histogram and mean/median calculations with the new dataset
+### Repeat the histogram and mean/median calculations with the new dataset
 imputed_daily_steps <- imputed_steps %>%
   group_by(date) %>%
   summarize(total_steps = sum(steps))
@@ -69,12 +68,12 @@ median_imputed <- median(imputed_daily_steps$total_steps)
 
 
 
-## Are there differences in activity patterns between weekdays and weekends?
-# Create a new factor variable
+# Are there differences in activity patterns between weekdays and weekends?
+### Create a new factor variable
 imputed_steps$date <- as.Date(imputed_steps$date)
 imputed_steps$day_type <- ifelse(weekdays(imputed_steps$date) %in% c("Saturday", "Sunday"), "weekend", "weekday")
 
-# Time series plot
+### Time series plot
 average_steps_day_type <- imputed_steps %>%
   group_by(interval, day_type) %>%
   summarize(mean_steps = mean(steps))
